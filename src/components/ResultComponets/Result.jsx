@@ -1,6 +1,6 @@
 import ResultBody from "./ResultBody";
 
-export default function Result({year, value, interestYear, totalInterest, investedCapit}){
+export default function Result({resultData}){
     return (
         <table id="result">
             <thead>
@@ -12,7 +12,8 @@ export default function Result({year, value, interestYear, totalInterest, invest
                   <th>Invested Capital</th>
                 </tr>
             </thead>
-            <ResultBody year='asdsa' value='asdasd' interestYear='sdasdasd' totalInterest='sadasd' investedCapit='asasdasd'/>
+            {resultData.map(result=> <ResultBody year={result.year} value={result.valueEndOfYear} interestYear={result.interest} investedCapit={result.annualInvestment}/>)}
+            
         </table>
     )
 }
